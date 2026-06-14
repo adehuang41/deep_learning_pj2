@@ -1,0 +1,9 @@
+{
+  "checkpoint_selection_split": "val",
+  "official_test_evaluated": false,
+  "run_name": "baseline",
+  "summary_csv": "results/metrics/baseline_results.csv",
+  "train_split": "dev",
+  "uses_test_during_training": false,
+  "uses_validation_for_selection": true
+}

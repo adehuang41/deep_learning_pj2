@@ -1,0 +1,53 @@
+{
+  "final_results_status": "frozen",
+  "official_test_run_count": 1,
+  "official_test_run_timing": "after final_selection_lock.json creation",
+  "post_test_tuning_performed": false,
+  "post_test_training_performed": false,
+  "second_official_test_performed": false,
+  "final_reported_results": true,
+  "final_selection_lock": {
+    "path": "results/protocol/final_selection_lock.json",
+    "sha256": "65b038b954221b476aa0e25ad735b3d8274c8070bf5b439bb89392ee27ea0635"
+  },
+  "final_official_test_results": {
+    "csv": {
+      "path": "results/metrics/final_official_test_results.csv",
+      "sha256": "45feec76baf6c3e955b1368c181e7d1bf6abfab5e0c06341e6d3e4f808a8bdab"
+    },
+    "json": {
+      "path": "results/metrics/final_official_test_results.json",
+      "sha256": "b0546ad6d277a0b5533fb9301dd9fd36508884404fadb524488033380cf2793c"
+    }
+  },
+  "final_official_test_rows": [
+    {
+      "row": 1,
+      "name": "SimpleCNN baseline",
+      "official_test_accuracy": 0.8672,
+      "official_test_error": 0.1328,
+      "official_test_loss": 0.3890565137863159
+    },
+    {
+      "row": 2,
+      "name": "VGG-A no BN",
+      "official_test_accuracy": 0.8785,
+      "official_test_error": 0.1215,
+      "official_test_loss": 0.47833527369499207
+    },
+    {
+      "row": 3,
+      "name": "VGG-A BN",
+      "official_test_accuracy": 0.8917,
+      "official_test_error": 0.1083,
+      "official_test_loss": 0.4291376169681549
+    },
+    {
+      "row": 4,
+      "name": "Final W4 full-train champion",
+      "official_test_accuracy": 0.9552,
+      "official_test_error": 0.0448,
+      "official_test_loss": 0.15230912523269655
+    }
+  ]
+}

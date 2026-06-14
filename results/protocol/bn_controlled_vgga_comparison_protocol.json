@@ -1,0 +1,49 @@
+{
+  "checkpoint_selection": "best validation accuracy, tie-break lower validation loss",
+  "official_test_used": false,
+  "selection_split": "val_dev",
+  "stage": "BN-P0-controlled-comparison",
+  "summaries": [
+    {
+      "best_val_acc": 0.8848,
+      "best_val_epoch": 50,
+      "best_val_loss": 0.42968016990814356,
+      "checkpoint": "results/checkpoints/bn_p0_vgg_a_best_val.pt",
+      "epochs": 50,
+      "final_val_acc": 0.8848,
+      "final_val_loss": 0.42968016990814356,
+      "history_csv": "results/logs/bn_p0_vgg_a_history.csv",
+      "images_per_second": 4332.515454348694,
+      "last_checkpoint": "results/checkpoints/bn_p0_vgg_a_last.pt",
+      "mean_epoch_time": 10.389759630016052,
+      "model": "VGG-A",
+      "model_name": "vgg_a",
+      "official_test_used": false,
+      "params": 9750922,
+      "peak_gpu_memory": 0.272641658782959,
+      "run_name": "bn_p0_vgg_a",
+      "total_train_time_seconds": 531.9225674539921
+    },
+    {
+      "best_val_acc": 0.8962,
+      "best_val_epoch": 48,
+      "best_val_loss": 0.3838138914981857,
+      "checkpoint": "results/checkpoints/bn_p0_vgg_a_bn_best_val.pt",
+      "epochs": 50,
+      "final_val_acc": 0.8952,
+      "final_val_loss": 0.3850744457596913,
+      "history_csv": "results/logs/bn_p0_vgg_a_bn_history.csv",
+      "images_per_second": 4325.2275513423365,
+      "last_checkpoint": "results/checkpoints/bn_p0_vgg_a_bn_last.pt",
+      "mean_epoch_time": 10.406044209358516,
+      "model": "VGG-A-BN",
+      "model_name": "vgg_a_bn",
+      "official_test_used": false,
+      "params": 9753674,
+      "peak_gpu_memory": 0.32567930221557617,
+      "run_name": "bn_p0_vgg_a_bn",
+      "total_train_time_seconds": 533.1647071419866
+    }
+  ],
+  "train_split": "train_dev"
+}

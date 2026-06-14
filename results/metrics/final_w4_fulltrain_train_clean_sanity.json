@@ -1,0 +1,10 @@
+{
+  "checkpoint": "results/checkpoints/final_w4_fulltrain_raw.pt",
+  "elapsed_seconds": 2.4927760180435143,
+  "num_examples": 50000,
+  "official_test_used": false,
+  "split": "cifar10_official_train_clean_eval_transform",
+  "train_clean_acc": 0.9857,
+  "train_clean_loss": 0.06920796693563461,
+  "used_for_model_selection": false
+}

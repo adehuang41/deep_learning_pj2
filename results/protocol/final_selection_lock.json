@@ -1,0 +1,64 @@
+{
+  "ablation_uses_official_test": false,
+  "created_at_utc": "2026-06-06T14:35:00Z",
+  "ema_policy": "no EMA / raw weights",
+  "final_champion": "CIFAR-PreActResNet-W4",
+  "final_champion_reason": "W4 selected as Pareto winner; W6 only improved validation accuracy by 0.34pp but used 2.25x parameters and more memory",
+  "lock_status": "locked_before_official_test",
+  "official_test_rows": [
+    {
+      "checkpoint": "results/checkpoints/baseline_best_val.pt",
+      "name": "SimpleCNN baseline",
+      "role": "baseline",
+      "row": 1,
+      "source": "best validation checkpoint"
+    },
+    {
+      "checkpoint": "results/checkpoints/bn_p0_vgg_a_best_val.pt",
+      "name": "VGG-A no BN",
+      "role": "BN control",
+      "row": 2,
+      "source": "best validation checkpoint"
+    },
+    {
+      "checkpoint": "results/checkpoints/bn_p0_vgg_a_bn_best_val.pt",
+      "name": "VGG-A BN",
+      "role": "BN treatment",
+      "row": 3,
+      "source": "best validation checkpoint"
+    },
+    {
+      "checkpoint": "results/checkpoints/final_w4_fulltrain_raw.pt",
+      "name": "Final W4 full-train champion",
+      "role": "final champion / Pareto winner",
+      "row": 4,
+      "source": "locked full-train recipe"
+    }
+  ],
+  "official_test_used_before_lock": false,
+  "sanity_check": {
+    "checkpoint": "results/checkpoints/final_w4_fulltrain_raw.pt",
+    "metrics_path": "results/metrics/final_w4_fulltrain_train_clean_sanity.json",
+    "num_examples": 50000,
+    "official_test_used": false,
+    "split": "cifar10_official_train_clean_eval_transform",
+    "train_clean_acc": 0.9857,
+    "train_clean_loss": 0.06920796693563461,
+    "used_for_model_selection": false
+  },
+  "stageE_recipe": {
+    "full_train_images": 50000,
+    "full_train_set": "CIFAR-10 official train set",
+    "phase1": "150 epochs base cosine",
+    "phase1_epochs": 150,
+    "phase2": "55 epochs low-LR fine-tuning",
+    "phase2_epochs": 55,
+    "total_epochs": 205
+  },
+  "tta_policy": "no-TTA",
+  "validation_stage_only_not_official_test_rows": [
+    "CIFAR-PreActResNet-W6",
+    "CompactResNetV2"
+  ],
+  "will_not_tune_after_official_test": true
+}

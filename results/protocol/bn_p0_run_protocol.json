@@ -1,0 +1,37 @@
+{
+  "final_lock_created": false,
+  "official_test_used": false,
+  "p1_activation_statistics_run": false,
+  "p2_bn_placement_ablation_run": false,
+  "probe_main_split": "train_dev",
+  "required_lrs_as_base_lr": [
+    0.0001,
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "robustness_lrs_as_base_lr": [
+    0.0001,
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.05
+  ],
+  "robustness_type": "short_lr_stress_test",
+  "snapshot_epochs": [
+    0,
+    1,
+    5,
+    10,
+    20,
+    30,
+    50,
+    "best-val"
+  ],
+  "stage": "BN-P0",
+  "status": "complete",
+  "total_elapsed_seconds": 2720.1306438689935
+}

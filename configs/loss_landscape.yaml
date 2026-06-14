@@ -1,0 +1,15 @@
+data_dir: ./data
+batch_size: 128
+num_workers: 4
+pin_memory: true
+subset_size:
+epochs: 20
+seed: 42
+models: [vgg_a, vgg_a_bn]
+learning_rates: [0.0001, 0.0005, 0.001, 0.002]
+momentum: 0.9
+weight_decay: 0.0005
+max_steps:
+metrics_dir: results/metrics
+figure: results/figures/bn_loss_landscape_envelope.png
+summary_csv: results/metrics/loss_landscape_summary.csv

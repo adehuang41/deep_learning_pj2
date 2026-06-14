@@ -1,0 +1,2 @@
+split,loss_standard_ce,accuracy,error,parameter_count,inference_time_per_batch,horizontal_flip_tta,official_final_eval
+val,0.1418963624715805,0.9586,0.04139999999999999,5849050,0.0193709498969838,True,False

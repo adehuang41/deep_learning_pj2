@@ -1,0 +1,60 @@
+{
+  "ema_used": false,
+  "evaluated_compact_resnet_v2": false,
+  "evaluated_w6": false,
+  "official_test_rows_count": 4,
+  "only_locked_rows": true,
+  "outputs": {
+    "csv": "results/metrics/final_official_test_results.csv",
+    "final_w4_classwise_accuracy": "results/figures/final_w4_official_classwise_accuracy.png",
+    "final_w4_confusion_matrix": "results/figures/final_w4_official_confusion_matrix.png",
+    "final_w4_misclassified_examples": null,
+    "json": "results/metrics/final_official_test_results.json"
+  },
+  "post_test_tuning_performed": false,
+  "pre_run": {
+    "checkpoint_hashes": {
+      "results/checkpoints/baseline_best_val.pt": "efbf011a05e588321c12f04d865ae8d6e59998b456c1e30f0c5cc2d9cd455b9f",
+      "results/checkpoints/bn_p0_vgg_a_best_val.pt": "8e58dfcf4df7695f1350880c05d731d3871306b9cfe977f333a124a31446558e",
+      "results/checkpoints/bn_p0_vgg_a_bn_best_val.pt": "38811b3b041627bcb9171c57254fec3fa6ad38436a4ae85c1d661640658ac3ee",
+      "results/checkpoints/final_w4_fulltrain_raw.pt": "6d6fbad2886631805819c9d5d64442d32bfce9bd33307a41cf72eca47be43f86"
+    },
+    "ema_policy": "no EMA / raw weights",
+    "lock_path": "results/protocol/final_selection_lock.json",
+    "lock_sha256": "65b038b954221b476aa0e25ad735b3d8274c8070bf5b439bb89392ee27ea0635",
+    "official_test_rows": [
+      {
+        "checkpoint": "results/checkpoints/baseline_best_val.pt",
+        "name": "SimpleCNN baseline",
+        "role": "baseline",
+        "row": 1,
+        "source": "best validation checkpoint"
+      },
+      {
+        "checkpoint": "results/checkpoints/bn_p0_vgg_a_best_val.pt",
+        "name": "VGG-A no BN",
+        "role": "BN control",
+        "row": 2,
+        "source": "best validation checkpoint"
+      },
+      {
+        "checkpoint": "results/checkpoints/bn_p0_vgg_a_bn_best_val.pt",
+        "name": "VGG-A BN",
+        "role": "BN treatment",
+        "row": 3,
+        "source": "best validation checkpoint"
+      },
+      {
+        "checkpoint": "results/checkpoints/final_w4_fulltrain_raw.pt",
+        "name": "Final W4 full-train champion",
+        "role": "final champion / Pareto winner",
+        "row": 4,
+        "source": "locked full-train recipe"
+      }
+    ],
+    "post_test_tuning_allowed": false,
+    "tta_policy": "no-TTA"
+  },
+  "status": "complete",
+  "tta_used": false
+}

@@ -1,0 +1,11 @@
+alpha_list: [0.001, 0.005, 0.01]
+max_records: 40
+train_if_missing: true
+force_train: false
+output_bn_csv: results/metrics/bn_comparison.csv
+output_predictiveness_csv: results/metrics/gradient_predictiveness.csv
+output_gradient_difference_csv: results/metrics/gradient_difference.csv
+figure_training: results/figures/bn_training_curves.png
+figure_predictiveness: results/figures/gradient_predictiveness.png
+figure_gradient_difference: results/figures/gradient_difference.png
+

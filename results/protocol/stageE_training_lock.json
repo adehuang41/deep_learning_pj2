@@ -1,0 +1,117 @@
+{
+  "bn_p0_completed": true,
+  "champion_reason": "W4 is the Pareto winner; W6 improves validation accuracy by only 0.34pp in clean Stage C-lowLR while using about 2.25x parameters and more memory.",
+  "clean_simplecnn_baseline_completed": true,
+  "compact_resnet_v2_role": "validation-stage development evidence only; dominated by W4",
+  "final_policy": {
+    "ema": false,
+    "model": "CIFAR-PreActResNet-W4",
+    "tta": "no-TTA",
+    "weights": "raw"
+  },
+  "final_selection_lock_created": false,
+  "final_selection_lock_path": "results/protocol/final_selection_lock.json",
+  "metrics": {
+    "checkpoint": "results/checkpoints/final_w4_fulltrain_raw.pt",
+    "final_selection_lock_created": false,
+    "final_train_acc": 0.91246,
+    "final_train_loss": 0.5149224911117554,
+    "full_train_images": 50000,
+    "history_csv": "results/metrics/final_w4_fulltrain_history.csv",
+    "last_checkpoint": "results/checkpoints/final_w4_fulltrain_last.pt",
+    "lr_curve": "results/figures/final_w4_fulltrain_lr_curve.png",
+    "mean_epoch_time": 23.96214191084813,
+    "mean_images_per_second": 2086.647427549012,
+    "official_test_used": false,
+    "params": 5849050,
+    "peak_gpu_memory_gb": 3.406780242919922,
+    "phase1_final_lr": 0.0,
+    "phase2_final_lr": 1e-06,
+    "phase2_start_lr": 1e-05,
+    "total_epochs": 205,
+    "total_train_time_seconds": 4950.789833293995,
+    "train_curve": "results/figures/final_w4_fulltrain_curves.png"
+  },
+  "official_test_row_plan": [
+    {
+      "checkpoint": "results/checkpoints/baseline_best_val.pt",
+      "name": "SimpleCNN baseline",
+      "row": 1,
+      "source": "best validation checkpoint"
+    },
+    {
+      "checkpoint": "results/checkpoints/bn_p0_vgg_a_best_val.pt",
+      "name": "VGG-A no BN",
+      "row": 2,
+      "source": "best validation checkpoint"
+    },
+    {
+      "checkpoint": "results/checkpoints/bn_p0_vgg_a_bn_best_val.pt",
+      "name": "VGG-A BN",
+      "row": 3,
+      "source": "best validation checkpoint"
+    },
+    {
+      "checkpoint": "results/checkpoints/final_w4_fulltrain_raw.pt",
+      "name": "Final W4 full-train champion",
+      "row": 4,
+      "source": "locked full-train recipe"
+    }
+  ],
+  "official_test_used": false,
+  "outputs": {
+    "checkpoint": "results/checkpoints/final_w4_fulltrain_raw.pt",
+    "history_csv": "results/metrics/final_w4_fulltrain_history.csv",
+    "last_checkpoint": "results/checkpoints/final_w4_fulltrain_last.pt",
+    "lr_curve": "results/figures/final_w4_fulltrain_lr_curve.png",
+    "train_curve": "results/figures/final_w4_fulltrain_curves.png"
+  },
+  "p1_activation_statistics": "skipped_by_default",
+  "p2_bn_placement_ablation": "skipped_by_default",
+  "provisional_final_champion": "CIFAR-PreActResNet-W4",
+  "stage": "E",
+  "stageE_recipe": {
+    "activation": "relu",
+    "augmentation": {
+      "cutout": true,
+      "cutout_length": 16,
+      "horizontal_flip": true,
+      "randaugment": true,
+      "randaugment_magnitude": 9,
+      "randaugment_num_ops": 2,
+      "random_crop": true
+    },
+    "batch_size": 256,
+    "depth": 28,
+    "dropout": 0.3,
+    "epoch_budget_reason": "W4 best validation in clean Stage C-lowLR occurred at fine-tune epoch 55.",
+    "from_scratch": true,
+    "full_train_images": 50000,
+    "loss": {
+      "label_smoothing": 0.05,
+      "name": "ce_label_smoothing"
+    },
+    "model": "preact_resnet_cifar",
+    "official_test_loader_used": false,
+    "optimizer": {
+      "momentum": 0.9,
+      "name": "sgd",
+      "nesterov": true,
+      "weight_decay": 0.0005
+    },
+    "phase1_base_epochs": 150,
+    "phase1_base_lr": 0.2,
+    "phase1_scheduler": "cosine",
+    "phase2_fine_tune_epochs": 55,
+    "phase2_max_lr": 0.0003,
+    "phase2_min_lr": 1e-06,
+    "phase2_optimizer_reinitialized": true,
+    "phase2_warmup_epochs": 3,
+    "total_epochs": 205,
+    "train_full_official_train_set": true,
+    "validation_loader_used": false,
+    "widen_factor": 4
+  },
+  "status": "complete",
+  "w6_role": "validation-stage larger candidate, not selected for Stage E"
+}

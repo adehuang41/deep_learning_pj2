@@ -1,0 +1,66 @@
+base:
+  model: compact_resnet
+  data_dir: ./data
+  batch_size: 128
+  num_workers: 4
+  pin_memory: true
+  epochs: 30
+  optimizer: sgd
+  lr: 0.1
+  momentum: 0.9
+  weight_decay: 0.0005
+  scheduler: cosine
+  loss: ce
+  activation: silu
+  dropout: 0.2
+  channels: [64, 128, 256]
+  seed: 42
+  save_dir: results/checkpoints
+  log_dir: results/logs
+  metrics_dir: results/metrics
+experiments:
+  - name: width_narrow
+    factor: Width
+    setting: "[32,64,128]"
+    channels: [32, 64, 128]
+  - name: width_default
+    factor: Width
+    setting: "[64,128,256]"
+    channels: [64, 128, 256]
+  - name: width_wide
+    factor: Width
+    setting: "[96,192,384]"
+    channels: [96, 192, 384]
+  - name: activation_relu
+    factor: Activation
+    setting: ReLU
+    activation: relu
+  - name: activation_leaky_relu
+    factor: Activation
+    setting: LeakyReLU
+    activation: leaky_relu
+  - name: activation_silu
+    factor: Activation
+    setting: SiLU
+    activation: silu
+  - name: regularization_weight_decay
+    factor: Regularization
+    setting: "Weight decay 5e-4"
+    weight_decay: 0.0005
+  - name: regularization_label_smoothing
+    factor: Regularization
+    setting: "Label smoothing 0.1"
+    loss: ce_label_smoothing
+    label_smoothing: 0.1
+  - name: regularization_dropout
+    factor: Regularization
+    setting: "Dropout 0.2"
+    dropout: 0.2
+  - name: optimizer_adamw
+    factor: Optimizer
+    setting: "AdamW cosine"
+    optimizer: adamw
+    lr: 0.001
+output_csv: results/metrics/ablation_results.csv
+figure: results/figures/ablation_accuracy_bar.png
+

@@ -1,0 +1,2 @@
+model_name,model,run_name,params,epochs,best_val_acc,best_val_loss,best_val_epoch,final_val_acc,final_val_loss,mean_epoch_time,images_per_second,peak_gpu_memory,total_train_time_seconds,checkpoint,last_checkpoint,history_csv,official_test_used
+vgg_a,VGG-A,bn_p0_vgg_a,9750922,50,0.8848,0.42968016990814356,50,0.8848,0.42968016990814356,10.389759630016052,4332.515454348694,0.272641658782959,531.9225674539921,results/checkpoints/bn_p0_vgg_a_best_val.pt,results/checkpoints/bn_p0_vgg_a_last.pt,results/logs/bn_p0_vgg_a_history.csv,False
